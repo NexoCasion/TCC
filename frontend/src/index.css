@@ -1,8 +1,62 @@
 body{
-  background: #eee;
-  color: #222;
+  background: #3A4F50;
+  color: #f4fefd;
   font-family: Arial, sans-serif;
   font-size: 14pt;
   margin: 0 auto;
   width: 720px;
+}
+.navbar{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  padding: 10px;
+  top: 0;
+  background-color: #1B2223;
+  
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+.nav-item{
+  padding: 10px;
+  font-size:x-large;
+
+}
+
+
+
+.teste{
+  margin-top: 100px;
+}
+#form{
+display:flex;
+flex-direction: column;
+
+}
+.titulo{
+  padding: 25px;
+  margin-top: 15px;
+  background-color: #0ef6cc;
+  border-radius: 15px;
+}
+.btn{
+  
+  border-radius: 15px;
+  padding: 10px;
+  background-color: #0ef6cc;
+  margin-top: 10px;
+}
+.btn:hover{
+  background-color: #0ef6cc;
+}
+.dados{
+  margin-top: 10px;
+}
+.cx-text{
+  background-color: white;
+  border-radius: 10px;
+  border-color: #1B2223;
+  
 }

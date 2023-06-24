@@ -1,9 +1,9 @@
 const Produto = require('./../models/Produto')
 
 module.exports = class ProdutosController{
-    static async getALL(req,res){
+    static async getAll(req,res){
         try {
-            const todosProdutos = await ProdutosController.find()
+            const todosProdutos = await Produto.find()
             res.json(todosProdutos)
         }catch(error){
             console.log(error)
@@ -16,20 +16,20 @@ module.exports = class ProdutosController{
             if(!price){
                 return res.status(406).json({message:"preço é obrigatorio"})
             } 
-            const novoProduto = new Produto([nome, price, desc, quantidade, imageUrl])
+            const novoProduto = new Produto({nome, price, desc, quantidade, imageUrl})
             await novoProduto.save()
-            res.json(todosProdutos)
+            res.json(novoProduto)
         }catch(error){
             console.log(error)
-            res.status(500).json({message: "Erro ao pegar produtos"})
+            res.status(500).json({message: "Erro ao criar produtos"})
         }
     }
     static async editProduct(req,res){
         try {
-            const {nome,price,desc,quantidade} = req.body;
-            const produto = await Product.findByIdAndUpdate(
+            const {nome,price,desc,quantidade,imageUrl} = req.body;
+            const produto = await Produto.findByIdAndUpdate(
                 req.params.id,
-                {nome,price,desc,quantidade,imageUrl} ,
+                {nome,price,desc,imageUrl} ,
                 {new: true}
             );
             if(!produto){
@@ -43,7 +43,7 @@ module.exports = class ProdutosController{
     }
     static async deleteProduto(req,res){
         try {
-            const produto = await Product.findByIdAndRemove(req.params.id)
+            const produto = await Produto.findByIdAndRemove(req.params.id)
             if(!produto){
                 return res.status(404).json({message: "Não existe um produto com este id"})
             }

@@ -2,13 +2,12 @@ import React,{useState} from 'react'
 import axios from 'axios';
 
 function Registrar() {
-    const [disponivel,setDisponivel] = useState(false);
+    
     const [nome,setNome]= useState('');
     const [price,setPrice]= useState('');
     const [desc,setDesc]= useState('');
-    const handleCheckboxChange = (event)=>{
-        setDisponivel(event.target.checked);
-    }
+    const [imageUrl, setImageUrl]= useState('');
+    const [createdAt, setCreatedAt]= useState('');
 
     const envioFormulario = (event)=>{
         event.preventDefault();
@@ -17,53 +16,46 @@ function Registrar() {
 
     function cadastrarProduto(){
         console.log(typeof(disponivel))
-        axios.post('https://loja-turma-terca-super-geeks.onrender.com/products',{disponivel,nome,desc,price})
+        axios.post('https://GIGA-suplements.com/products',{imageUrl,nome,desc,price,createdAt})
             .then(res=>console.log(res.data))
             .catch(erro=>console.log(erro))
     }
     return (
-        <div>
-            <h1>Cadastre seu produto</h1>
+        <div >
+            <h1 className='titulo'>Cadastre seu produto</h1>
             <div>
-                <form onSubmit={envioFormulario}>
-                    <label htmlFor="nome">Nome</label>
-                    <input 
+                <form id='form' onSubmit={envioFormulario}>
+                <label className='dados' htmlFor="imageUrl">Imagem do produto:</label>
+                    <input className='cx-text' 
+                        type="text" 
+                        id="imageUrl" 
+                        name="imageUrl" 
+                        onChange={(e)=>setNome(e.target.value)}
+                    />
+                   
+                    <label className='dados' htmlFor="nome">Nome do produto:</label>
+                    <input className='cx-text' 
                         type="text" 
                         id="nome" 
                         name="nome" 
                         onChange={(e)=>setNome(e.target.value)}
                     />
-                    <label htmlFor="desc">desc</label>
-                    <input 
+                    <label className='dados' htmlFor="desc">Descrição:</label>
+                    <input className='cx-text' 
                         type="text" 
                         id="desc" 
                         name="desc" 
                         onChange={(e)=>setDesc(e.target.value)}
                     />
-                    <label htmlFor="price">price</label>
-                    <input 
+                    <label className='dados' htmlFor="price">Preço:</label>
+                    <input className='cx-text' 
                         type="number" 
                         id="price" 
                         name="price" 
                         onChange={(e)=>setPrice(e.target.value)}
                     />
-                    <label htmlFor="disponivel"> Produto Disponivel:</label>
-                    <input 
-                        type="checkbox" 
-                        name="disponivel" 
-                        id="disponivel" 
-                        checked={disponivel}
-                        onChange={handleCheckboxChange}
-                    />
-                    <label htmlFor="nDisponivel"> Produto Não Disponivel:</label>
-                    <input 
-                        type="checkbox" 
-                        name="nDisponivel" 
-                        id="nDisponivel" 
-                        checked={!disponivel}
-                        onChange={handleCheckboxChange}
-                    />
-                    <button type="submit">Cadastrar Produto</button>
+                    
+                    <button className='btn' type="submit">Cadastrar Produto</button>
                 </form>
             </div>
         </div>

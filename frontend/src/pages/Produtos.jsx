@@ -1,23 +1,19 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios'
+import Card from './Card'
 function Produtos() {
     const [produtos,setProdutos] = useState([])
     useEffect(()=>{
-        axios.get('https://loja-turma-terca-super-geeks.onrender.com/products')
+        axios.get('http://localhost:3001/produtos')
             .then(res=>setProdutos(res.data))
             .catch(err=>console.log(err))
     },[])
   return (
-    <div>
+    <div className='space-top'>
         <h1> Produtos </h1>
         
         {
-            produtos.map(p=> <div key={p._id}>
-                                <h2>{p.nome}</h2>
-                                <p>{p.desc} </p>
-                                <p>{p.price}</p>
-                                <p>{p.disponivel}</p>
-                            </div>
+            produtos.map(p=> <Card {...p}/>
             )
         }
         
