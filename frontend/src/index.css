@@ -22,24 +22,25 @@ a{
 .nav-item{
   padding: 10px;
   font-size:x-large;
-
 }
-
-
-
 .teste{
   margin-top: 100px;
 }
-#form{
-display:flex;
-flex-direction: column;
 
+#form{
+  display:flex;
+  flex-direction: column;
+  justify-items: center;
 }
-.titulo{
+.tituloC{
+  display: flex;
+  justify-content: center;
   padding: 25px;
   margin-top: 15px;
   background-color: #0ef6cc;
-  border-radius: 15px;
+  border-radius: 50px;
+  font-size: 50px;
+  color: #3A4F50;
 }
 .btn{
   
@@ -47,16 +48,42 @@ flex-direction: column;
   padding: 10px;
   background-color: #0ef6cc;
   margin-top: 10px;
+  font-size: large;
 }
 .btn:hover{
   background-color: #0ef6cc;
 }
 .dados{
   margin-top: 10px;
+  font-size: 25px;
 }
 .cx-text{
-  background-color: white;
+  background-color: #4d6a6b;
   border-radius: 10px;
   border-color: #1B2223;
-  
+  color: #3A4F50;
 }
+.produtos{
+  display: grid;
+  width: 114rem;
+  grid-gap: 6rem;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  align-items: start;
+}
+@media (max-width: 60em) {
+  .produtos {
+    grid-gap: 3rem;
+  }
+}
+.tituloP{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+  background-color: #0ef6cc;
+  font-size: 50px;
+  color: #3A4F50;
+}
+

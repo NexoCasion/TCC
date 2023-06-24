@@ -21,10 +21,10 @@ function Registrar() {
     }
     return (
         <div >
-            <h1 className='titulo'>Cadastre seu produto</h1>
-            <div>
+            <h1 className='tituloC'>Cadastre seu produto</h1>
+            <div className='dados'>
                 <form id='form' onSubmit={envioFormulario}>
-                <label className='dados' htmlFor="imageUrl">Imagem do produto:</label>
+                <label  htmlFor="imageUrl">Imagem do produto:</label>
                     <input className='cx-text' 
                         type="text" 
                         id="imageUrl" 
@@ -32,21 +32,21 @@ function Registrar() {
                         onChange={(e)=>setImageUrl(e.target.value)}
                     />
                    
-                    <label className='dados' htmlFor="nome">Nome do produto:</label>
+                    <label  htmlFor="nome">Nome do produto:</label>
                     <input className='cx-text' 
                         type="text" 
                         id="nome" 
                         name="nome" 
                         onChange={(e)=>setNome(e.target.value)}
                     />
-                    <label className='dados' htmlFor="desc">Descrição:</label>
+                    <label  htmlFor="desc">Descrição:</label>
                     <input className='cx-text' 
                         type="text" 
                         id="desc" 
                         name="desc" 
                         onChange={(e)=>setDesc(e.target.value)}
                     />
-                    <label className='dados' htmlFor="price">Preço:</label>
+                    <label  htmlFor="price">Preço:</label>
                     <input className='cx-text' 
                         type="number" 
                         id="price" 

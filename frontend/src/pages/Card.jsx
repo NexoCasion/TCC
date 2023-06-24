@@ -1,14 +1,21 @@
 import React from 'react'
-
+import "./Card.css"
 function Card(props) {
   return (
-    <div key={props._id}>
-        <h2>{props.nome}</h2>
-        <p>{props.desc} </p>
-        <p>{props.price}</p>
-        <img src={props.imageUrl} alt={props.nome} />
-        <p>{props.createdAt}</p>
+  <div className='grid'> 
+    <div className='grid_item'>
+    <div className='Card' key={props._id}>
+        <img className='imgcard' src={props.imageUrl} alt={props.nome} />
+            <div className='text-card'>
+
+            <h2>{props.nome}</h2>
+            <p>{props.desc} </p>
+            <p>{props.price}</p>
+
+            </div>
+     </div>
     </div>
+  </div>
   )
 }
 

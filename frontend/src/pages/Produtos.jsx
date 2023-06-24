@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios'
 import Card from './Card'
+
 function Produtos() {
     const [produtos,setProdutos] = useState([])
     useEffect(()=>{
@@ -34,16 +35,25 @@ function Produtos() {
           })
           .catch(erro=>console.log(erro))
   }
+  
   return (
-    <div className='space-top'>
-        <h1> Produtos </h1>
-        
-        {
-            produtos.map(p=> <Card {...p}/>
-            )
-        }
-        
+  <>
+    <div className='tituloP'>
+      <h1> Produtos </h1>
     </div>
+      <div>
+        <div>
+          <div className='produtos'>
+    
+                
+                {
+                  produtos.map(p=> <Card {...p}/>
+                  )
+                }
+          </div>
+        </div>
+      </div>
+  </>
   )
 }
 
