@@ -4,7 +4,6 @@ const produtoSchema = new mongoose.Schema({
     nome: String,
     price: Number,
     desc: String,
-    quantidade:Number,
     imageUrl: String,
     createdAt: {type: Date, default: Date.now}
 })
