@@ -7,7 +7,6 @@ function Registrar() {
     const [price,setPrice]= useState('');
     const [desc,setDesc]= useState('');
     const [imageUrl, setImageUrl]= useState('');
-    const [createdAt, setCreatedAt]= useState('');
 
     const envioFormulario = (event)=>{
         event.preventDefault();
@@ -16,7 +15,7 @@ function Registrar() {
 
     function cadastrarProduto(){
         console.log(typeof(disponivel))
-        axios.post('https://GIGA-suplements.com/products',{imageUrl,nome,desc,price,createdAt})
+        axios.post('http://localhost:3001/produtos',{imageUrl,nome,desc,price})
             .then(res=>console.log(res.data))
             .catch(erro=>console.log(erro))
     }
@@ -30,7 +29,7 @@ function Registrar() {
                         type="text" 
                         id="imageUrl" 
                         name="imageUrl" 
-                        onChange={(e)=>setNome(e.target.value)}
+                        onChange={(e)=>setImageUrl(e.target.value)}
                     />
                    
                     <label className='dados' htmlFor="nome">Nome do produto:</label>
