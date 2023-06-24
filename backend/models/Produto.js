@@ -10,4 +10,4 @@ const produtoSchema = new mongoose.Schema({
 
 const Produto = mongoose.model('produto',produtoSchema)
 
-modelNames.exports = Produto
+module.exports = Produto
