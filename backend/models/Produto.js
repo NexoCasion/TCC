@@ -5,9 +5,9 @@ const produtoSchema = new mongoose.Schema({
     price: Number,
     desc: String,
     imageUrl: String,
-    createdAt: {type: Date, default: Date.now}
+    createdAt: { type: Date, default: Date.now }
 })
 
-const Produto = mongoose.model('produto',produtoSchema)
+const Produto = mongoose.model('produto', produtoSchema)
 
 module.exports = Produto
